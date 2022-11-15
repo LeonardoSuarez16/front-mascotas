@@ -1,23 +1,24 @@
 
-    <nav>
+  <nav>
         <div class="nav-wrapper">
           <a routerLink="/inicio" class="brand-logo">Logo</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a routerLink="/administrador/crear-usuario">Usuarios</a></li>
-            <li><a routerLink="/administrador/crear-producto">Productos</a></li>
-            <li><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
-            <li><a routerLink="/seguridad/identificar">Iniciar Sesion</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/administrador/crear-usuario">Usuarios</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/administrador/crear-producto">Productos</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesion</a></li>
+            <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesion</a></li>
           </ul>
         </div>
       </nav>
     
       <ul class="sidenav" id="mobile-demo">
-        <li><a routerLink="/administrador/crear-usuario">Usuarios</a></li>
-        <li><a routerLink="/administrador/usuario">Usuarios</a></li>
-        <li><a routerLink="/administrador/producto">Productos</a></li>
-        <li><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
-        <li><a routerLink="/seguridad/identificar">Iniciar Sesion</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administrador/crear-usuario">Usuarios</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administrador/crear-producto">Productos</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesion</a></li>
+        <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesion</a></li>
       </ul>
 
 
