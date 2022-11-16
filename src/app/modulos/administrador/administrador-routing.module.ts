@@ -38,6 +38,10 @@ const routes: Routes = [
     component:EliminarUsuarioComponent
   },
   {
+    path: "listar-productos",
+    component: BuscarProductoComponent
+  },
+  {
     path: 'crear-mascota',
     component:CrearMascotaComponent
   },
@@ -58,7 +62,7 @@ const routes: Routes = [
     component:CrearProductoComponent
   },
   {
-    path: 'editar-producto',
+    path: 'editar-producto/:id',
     component:BuscarProductoComponent
   },
   {
