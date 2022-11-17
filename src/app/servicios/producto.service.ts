@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Model } from 'mongoose';
 import { Observable } from 'rxjs';
-import { ModeloPructos } from '../modelos/producto.modelo';
+import { ModeloProductos } from '../modelos/producto.modelo';
 import { SeguridadService } from './seguridad.service';
 @Injectable({
   providedIn: 'root'
@@ -14,19 +14,19 @@ export class ProductoService {
     this.token = this.seguridadServicio.obtenerToken();
   } 
 
-  obtenerRegistros(): Observable<ModeloPructos[]>{
-    return this.http.get<ModeloPructos[]>(`${this.url}/productos-servicios`)
+  obtenerRegistros(): Observable<ModeloProductos[]>{
+    return this.http.get<ModeloProductos[]>(`${this.url}/productos-servicios`)
   }
 
-  crearProducto(producto: ModeloPructos): Observable<ModeloPructos> { 
-    return this.http.post<ModeloPructos>(`${this.url}/productos-servicios`, producto, {
+  crearProducto(producto: ModeloProductos): Observable<ModeloProductos> { 
+    return this.http.post<ModeloProductos>(`${this.url}/productos-servicios`, producto, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     })
   } 
-  ActualizarProducto(producto: ModeloPructos): Observable<ModeloPructos> { 
-    return this.http.put<ModeloPructos>(`${this.url}/productos-servicios`, producto, {
+  ActualizarProducto(producto: ModeloProductos): Observable<ModeloProductos> { 
+    return this.http.put<ModeloProductos>(`${this.url}/productos-servicios`, producto, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })

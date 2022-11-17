@@ -22,6 +22,7 @@ import { EliminarSucursalComponent } from './sucursal/eliminar-sucursal/eliminar
 import { CrearSucursalComponent } from './sucursal/crear-sucursal/crear-sucursal.component';
 import { BuscarSucursalComponent } from './sucursal/buscar-sucursal/buscar-sucursal.component';
 import { EditarSucursalComponent } from './sucursal/editar-sucursal/editar-sucursal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -49,7 +50,9 @@ import { EditarSucursalComponent } from './sucursal/editar-sucursal/editar-sucur
   ],
   imports: [
     CommonModule,
-    AdministradorRoutingModule
+    AdministradorRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministradorModule { }
