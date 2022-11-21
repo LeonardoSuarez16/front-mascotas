@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ModeloDatos } from 'src/app/modelos/datos.modelo';
+import { ModeloUsuario } from 'src/app/modelos/datos.modelo';
 import { ModeloIdentificar } from 'src/app/modelos/identificar.modelo';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 

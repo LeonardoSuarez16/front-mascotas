@@ -4,7 +4,7 @@
           <a routerLink="/inicio" class="brand-logo">GO GO MASCOTAS</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li *ngIf="seInicioSesion"><a routerLink="/administrador/crear-usuario">Usuarios</a></li>
+            <li *ngIf="seInicioSesion"><a routerLink="/administrador/listar-usuario">Usuarios</a></li>
             <li *ngIf="seInicioSesion"><a routerLink="/administrador/listar-productos">Productos</a></li>
             <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
             <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesion</a></li>
@@ -14,7 +14,7 @@
       </nav>
     
       <ul class="sidenav" id="mobile-demo">
-        <li *ngIf="seInicioSesion"><a routerLink="/administrador/crear-usuario">Usuarios</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administrador/listar-usuario">Usuarios</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/administrador/listar-productos">Productos</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar clave</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesion</a></li>

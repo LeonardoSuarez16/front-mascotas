@@ -1,3 +1,4 @@
+
 <a routerLink="/administrador/crear-producto" class="btn">Nuevo Producto</a>
 <table class="table responsive">
     <thead>
@@ -17,6 +18,9 @@
         <th>
           Editar
         </th>
+        <th>
+          Eliminar
+        </th>
         </tr> 
     </thead>
     <tbody>
@@ -33,12 +37,16 @@
           <td>
             {{p.tipo}}
           </td>
+          <!-- esto es para cundo quiera insertar ina imagen -->
           <!-- <td>
             <imagen src="{{p.imagen}}" class="imagenProducto"/>
           </td> -->
           <td>
             <a routerLink="/administrador/editar-producto/{{p.id}}" class="btn">Editar Producto</a>
           </td>
+            <td>
+            <a routerLink="/administrador/eliminar-producto/{{p.id}}" class="btn">Eliminar</a>
+           </td> 
         </tr>
     </tbody>
 </table>

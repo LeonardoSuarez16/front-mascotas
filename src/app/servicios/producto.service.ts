@@ -18,6 +18,12 @@ export class ProductoService {
     return this.http.get<ModeloProductos[]>(`${this.url}/productos-servicios`)
   }
 
+  // generamos una busqueda adicional por id para el mudulo de editar productos
+  // ademas le quitamos los [] para que  no obtengamos una lista sino uno solo
+  obtenerRegistrosPorId(id:string): Observable<ModeloProductos>{
+    return this.http.get<ModeloProductos>(`${this.url}/productos-servicios/${id}`)
+  }
+
   crearProducto(producto: ModeloProductos): Observable<ModeloProductos> { 
     return this.http.post<ModeloProductos>(`${this.url}/productos-servicios`, producto, {
       headers: new HttpHeaders({
@@ -26,7 +32,7 @@ export class ProductoService {
     })
   } 
   ActualizarProducto(producto: ModeloProductos): Observable<ModeloProductos> { 
-    return this.http.put<ModeloProductos>(`${this.url}/productos-servicios`, producto, {
+    return this.http.put<ModeloProductos>(`${this.url}/productos-servicios/${producto.id}`, producto, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })

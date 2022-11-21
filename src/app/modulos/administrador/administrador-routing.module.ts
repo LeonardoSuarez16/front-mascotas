@@ -10,7 +10,9 @@ import { EditarPlanComponent } from './plan/editar-plan/editar-plan.component';
 import { EliminarPlanComponent } from './plan/eliminar-plan/eliminar-plan.component';
 import { BuscarProductoComponent } from './producto/buscar-producto/buscar-producto.component';
 import { CrearProductoComponent } from './producto/crear-producto/crear-producto.component';
+import { EditarProductoComponent } from './producto/editar-producto/editar-producto.component';
 import { EliminarProductoComponent } from './producto/eliminar-producto/eliminar-producto.component';
+
 import { BuscarSucursalComponent } from './sucursal/buscar-sucursal/buscar-sucursal.component';
 import { CrearSucursalComponent } from './sucursal/crear-sucursal/crear-sucursal.component';
 import { EditarSucursalComponent } from './sucursal/editar-sucursal/editar-sucursal.component';
@@ -26,7 +28,7 @@ const routes: Routes = [
     component:CrearUsuarioComponent
   },
   {
-    path: 'editar-usuario',
+    path: 'editar-usuario/:id',
     component:EditarUsuarioComponent
   },
   {
@@ -40,6 +42,10 @@ const routes: Routes = [
   {
     path: "listar-productos",
     component: BuscarProductoComponent
+  },
+  {
+    path: "listar-usuario",
+    component: BuscarUsuarioComponent
   },
   {
     path: 'crear-mascota',
@@ -63,14 +69,14 @@ const routes: Routes = [
   },
   {
     path: 'editar-producto/:id',
-    component:BuscarProductoComponent
+    component:EditarProductoComponent
   },
   {
     path: 'buscar-producto',
     component:BuscarProductoComponent
   },
   {
-    path: 'eliminar-producto',
+    path: 'eliminar-producto/:id',
     component:EliminarProductoComponent
   },
   {
