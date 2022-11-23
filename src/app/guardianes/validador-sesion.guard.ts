@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Route, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { RootQuerySelector } from 'mongoose';
+// import { RootQuerySelector } from 'mongoose';
 import { Observable } from 'rxjs';
 import { SeguridadService } from '../servicios/seguridad.service';
 
