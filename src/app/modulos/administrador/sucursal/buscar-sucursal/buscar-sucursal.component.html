@@ -1,1 +1,51 @@
-<p>buscar-sucursal works!</p>
+<a routerLink="/administrador/crear-sucursal" class="btn">Nueva Sucursal</a>
+<table class="table responsive">
+    <thead>
+        <tr>
+        <th>
+            departamento
+        </th>
+        <th>
+            ciudad
+        </th>
+        <th>
+            direccion
+        </th>
+        <th>
+            telefono
+        </th>
+        <th>
+          Editar
+        </th>
+        <th>
+          Eliminar
+        </th>
+        </tr> 
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoRegistros">           
+          <td>
+            {{p.departamento}}
+          </td>
+          <td>
+            {{p.ciudad}}
+          </td>
+          <td>
+            {{p.direccion}}
+          </td>
+          <td>
+            {{p.telefono}}
+          </td>
+          <!-- esto es para cundo quiera insertar ina imagen -->
+          <!-- <td>
+            <imagen src="{{p.imagen}}" class="imagenProducto"/>
+          </td> -->
+          <td>
+            <a routerLink="/administrador/editar-sucursal/{{p.id}}" class="btn">Editar Sucursal</a>
+          </td>
+            <td>
+            <a routerLink="/administrador/eliminar-sucursal/{{p.id}}" class="btn">Eliminar</a>
+           </td> 
+        </tr>
+    </tbody>
+</table>

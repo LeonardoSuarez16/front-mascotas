@@ -1,1 +1,56 @@
-<p>editar-mascota works!</p>
+<!-- usamos el miosmo codigo de crear pero temnemos unos pequeños ajustes -->
+
+<div class="row">
+    <h3 class="center-align">Editar Mascota</h3>
+    <article class="col s6 offset-s3">
+        <!-- en este camnbiamos este metodo por EditarProducto -->
+        <form [formGroup]="fgValidador" (ngSubmit)="EditarMascota()" method="POST" action="formulario-contacto.php">
+        <!-- en esta linea que sigue es la que se pone de mas para el editar tambien recuerde copiar la logica de 
+        negocio y traerla  para la logica de editar para que borre el error de la linea anterio-->
+            
+        
+
+        
+        <!-- SIEMPRE PONER ESTE PAER QUE SALGA EL FORMULARIO PILAS -->
+        
+        <input type="hidden" formControlName="id">
+            
+             
+             <div class="input-field">
+                <label for="id" class="active">id</label>
+                <input formControlName="id" type="text" name="id" required>
+            </div> 
+             <div class="input-field">
+                <label for="nombre" class="active">Nombre</label>
+                <input formControlName="nombre" type="text" name="nombre" required>
+            </div>  
+            <div class="input-field">
+                <label for="foto" class="active">Foto</label>
+                <input formControlName="foto" type="text" name="foto" required>
+            </div>
+            <div class="input-field">
+                <label for="estado" class="active">Estado</label>
+                <input formControlName="estado" type="text" name="estado" required>
+            </div>
+            <div class="input-field">
+                <label for="especie" class="active">Especie</label>
+                <input formControlName="especie" type="text" name="especie" required>
+            </div>
+            <div class="input-field">
+                <label for="comentario" class="active">Comentario</label>
+                <input formControlName="comentario" type="text" name="comentario" required>
+            </div>           
+            <!-- <div class="input-field">
+                <label for="imagen">imagen</label>
+                <input formControlName="imagen" type="text" name="imagen" required>
+            </div> -->
+            
+            <p class="center-align">
+               <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn" type="submit"><i 
+                class="material-icons right">send</i>Editar</button>
+            </p>
+
+        </form>
+    </article>
+
+</div>

@@ -36,8 +36,12 @@ const routes: Routes = [
     component:BuscarUsuarioComponent
   },
   {
-    path: 'eliminar-usuario',
+    path: 'eliminar-usuario/:id',
     component:EliminarUsuarioComponent
+  },
+  {
+    path: "listar-mascotas",
+    component: BuscarMascotaComponent
   },
   {
     path: "listar-productos",
@@ -48,11 +52,20 @@ const routes: Routes = [
     component: BuscarUsuarioComponent
   },
   {
+    path: "listar-plan",
+    component: BuscarPlanComponent
+  },
+  {
+    path: "listar-sucursal",
+    component: BuscarSucursalComponent
+  },
+  
+  {
     path: 'crear-mascota',
     component:CrearMascotaComponent
   },
   {
-    path: 'editar-mascota',
+    path: 'editar-mascota/:id',
     component:EditarMascotaComponent
   },
   {
@@ -60,7 +73,7 @@ const routes: Routes = [
     component:BuscarMascotaComponent
   },
   {
-    path: 'eliminar-mascota',
+    path: 'eliminar-mascota/:id',
     component:EliminarMascotaComponent
   },
   {
@@ -84,7 +97,7 @@ const routes: Routes = [
     component:CrearPlanComponent
   },
   {
-    path: 'editar-plan',
+    path: 'editar-plan/:id',
     component:EditarPlanComponent
   },
   {
@@ -92,7 +105,7 @@ const routes: Routes = [
     component:BuscarPlanComponent
   },
   {
-    path: 'eliminar-plan',
+    path: 'eliminar-plan/:id',
     component:EliminarPlanComponent
   },
   {
@@ -100,7 +113,7 @@ const routes: Routes = [
     component:CrearSucursalComponent
   },
   {
-    path: 'editar-sucursal',
+    path: 'editar-sucursal/:id',
     component:EditarSucursalComponent
   },
   {
@@ -108,7 +121,7 @@ const routes: Routes = [
     component:BuscarSucursalComponent
   },
   {
-    path: 'eliminar-sucursal',
+    path: 'eliminar-sucursal/:id',
     component:EliminarSucursalComponent
   }
 

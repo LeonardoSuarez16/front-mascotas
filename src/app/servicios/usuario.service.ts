@@ -40,12 +40,12 @@ export class UsuarioService {
     })
   }
   
-  // EliminarUsuario(id: string): Observable<any> { 
-  //   return this.http.delete(`${this.url}/usuarios-servicios/${id}`, {
-  //     headers: new HttpHeaders({
-  //       'Authorization': `Bearer ${this.token}`
-  //     })
-  //   })
-  // }
+  EliminarUsuario(id: string): Observable<any> { 
+    return this.http.delete(`${this.url}/usuarios/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    })
+  }
 
 }

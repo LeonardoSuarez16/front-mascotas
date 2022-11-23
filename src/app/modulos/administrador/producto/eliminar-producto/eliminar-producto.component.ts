@@ -36,8 +36,8 @@ export class EliminarProductoComponent implements OnInit {
   EliminarProducto(){
 
     this.servicioProducto.EliminarProducto(this.id).subscribe((datos: any) => {
-      alert("Usuario eliminado correctamente LD");
-      this.router.navigate(["/administracion/listar-usuario"]);
+      alert("producto eliminado correctamente LD");
+      this.router.navigate(["/administrador/listar-productos"]);
     }, (error: any) => {
       alert("Error al eliminar LD")
     })

@@ -1,1 +1,43 @@
-<p>editar-sucursal works!</p>
+<!-- usamos el miosmo codigo de crear pero temnemos unos pequeños ajustes -->
+
+<div class="row">
+    <h3 class="center-align">Editar Sucursal</h3>
+    <article class="col s6 offset-s3">
+        <!-- en este camnbiamos este metodo por EditarProducto -->
+        <form [formGroup]="fgValidador" (ngSubmit)="EditarSucursal()" method="POST" action="formulario-contacto.php">
+        <!-- en esta linea que sigue es la que se pone de mas para el editar tambien recuerde copiar la logica de 
+        negocio y traerla  para la logica de editar para que borre el error de la linea anterio-->
+            <input type="hidden" formControlName="id">
+            
+            <div class="input-field">
+                <label for="departamento" class="active">Departamento</label>
+                <input formControlName="departamento" type="text" name="departamento" required>
+            </div>  
+
+            <!-- en todos los label le ponemos esto (class="active") para que no se me sobre monten los nombres -->
+            <div class="input-field">
+                <label for="ciudad"class="active">Ciudad</label>
+                <input formControlName="ciudad" type="text" name="ciudad" required>
+            </div>
+            <div class="input-field">
+                <label for="direccion" class="active">Direccion</label>
+                <input formControlName="direccion" type="text" name="direccion" required>
+            </div>
+            <div class="input-field">
+                <label for="telefono" class="active">Telefono</label>
+                <input formControlName="telefono" type="text" name="telefono" required>
+            </div>
+            <!-- <div class="input-field">
+                <label for="imagen">imagen</label>
+                <input formControlName="imagen" type="text" name="imagen" required>
+            </div> -->
+            
+            <p class="center-align">
+               <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn" type="submit"><i 
+                class="material-icons right">send</i>Enviar</button>
+            </p>
+
+        </form>
+    </article>
+
+</div>

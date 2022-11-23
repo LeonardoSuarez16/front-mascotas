@@ -1,1 +1,45 @@
-<p>buscar-plan works!</p>
+<a routerLink="/administrador/crear-plan" class="btn">Nuevo Plan</a>
+<table class="table responsive">
+    <thead>
+        <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Descripcion
+        </th>
+        <th>
+            Precio
+        </th>
+        <th>
+          Editar
+        </th>
+        <th>
+          Eliminar
+        </th>
+        </tr> 
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoRegistros">
+          <td>
+            {{p.nombre}}
+          </td>
+          <td>
+            {{p.descripcion}}
+          </td>
+          <td>
+            {{p.precio}}
+          </td>
+          <!-- esto es para cundo quiera insertar ina imagen -->
+          <!-- <td>
+            <imagen src="{{p.imagen}}" class="imagenProducto"/>
+          </td> -->
+          <td>
+            <a routerLink="/administrador/editar-plan/{{p.id}}" class="btn">Editar Plan</a>
+          </td>
+            <td>
+            <a routerLink="/administrador/eliminar-plan/{{p.id}}" class="btn">Eliminar</a>
+           </td> 
+        </tr>
+    </tbody>
+</table>

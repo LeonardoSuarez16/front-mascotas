@@ -1,9 +1,50 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ModeloMascota } from '../modelos/mascota.modelo';
+import { SeguridadService } from './seguridad.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MascotaService {
 
-  constructor() { }
+  url = 'http://localhost:3000';
+  token: string = '';
+  constructor(private http: HttpClient, private seguridadServicio: SeguridadService) {
+    this.token = this.seguridadServicio.obtenerToken();
+  }
+
+  obtenerRegistros(): Observable<ModeloMascota[]> {
+    return this.http.get<ModeloMascota[]>(`${this.url}/mascotas`)
+  }
+
+  // generamos una busqueda adicional por id para el mudulo de editar productos
+  // ademas le quitamos los [] para que  no obtengamos una lista sino uno solo
+  obtenerRegistrosPorId(id: string): Observable<ModeloMascota> {
+    return this.http.get<ModeloMascota>(`${this.url}/mascotas/${id}`)
+  }
+
+  crearMascota(mascota: ModeloMascota): Observable<ModeloMascota> {
+    return this.http.post<ModeloMascota>(`${this.url}/mascotas`, mascota, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    })
+  }
+  ActualizarMascota(mascota: ModeloMascota): Observable<ModeloMascota> {
+    return this.http.put<ModeloMascota>(`${this.url}/mascotas/${mascota.id}`, mascota, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    })
+  }
+  
+  EliminarMascota(id: string): Observable<any> {
+    return this.http.delete(`${this.url}/mascotas/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    })
+  }
 }

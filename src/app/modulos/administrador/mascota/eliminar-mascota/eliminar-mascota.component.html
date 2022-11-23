@@ -1,1 +1,21 @@
-<p>eliminar-mascota works!</p>
+<div class="container">
+    <h3 class="center-align"> Eliminar mascota</h3>
+        <div class="input-field">
+            <strong>¿Estás seguro de eliminar esta mascota con la siguiente información?</strong>
+            <br />
+            <ul>
+                <li>
+                    ID: {{id}}
+                </li>
+                <li>
+                    NOMBRE: {{nombre}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-18">
+            <button class="btn btn-success" type="submit" (click)="EliminarMascota()">Eliminar</button>        
+            &nbsp;<a class="btn btn-warning orange" type="submit" routerLink="/administrador/buscar-mascotas">Cancelar</a>
+        </div>
+</div>
+

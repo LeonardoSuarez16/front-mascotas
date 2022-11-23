@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Action } from 'rxjs/internal/scheduler/Action';
 import { ModeloUsuario } from 'src/app/modelos/datos.modelo';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
@@ -11,6 +10,7 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
   styleUrls: ['./editar-usuario.component.css']
 })
 export class EditarUsuarioComponent implements OnInit {
+  
 
   id: string = '';
 
@@ -34,11 +34,13 @@ export class EditarUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];
+    
    
     this.BuscarUsuario();
 
   }
   BuscarUsuario() {
+    
     this, this.servicioUsuario.obtenerRegistrosPorId(this.id).subscribe((datos: ModeloUsuario) => {
       
       //creamos esta linea que sige para que nos avilite el boton de editar

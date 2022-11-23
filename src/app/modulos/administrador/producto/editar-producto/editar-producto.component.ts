@@ -15,12 +15,8 @@ export class EditarProductoComponent implements OnInit {
   
   id: string = '';
   
-
-
   // en este lugar copiamos lo que cortamos de muestra de crear y empezamos a importar los pquetes
   // para pode quitar los errores
-
- 
   fgValidador: FormGroup = this.fb.group({
     // definimos otro control a diferencia del crear que es el de (id)
     'id': ['', [Validators.required]],
