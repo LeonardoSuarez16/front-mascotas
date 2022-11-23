@@ -1,0 +1,16 @@
+.container{
+    width: 90%;
+}
+
+nav{
+    height: 20vh;
+}
+
+.nav-wrapper{
+    display: block;
+    justify-content: center;
+}
+
+.brand-logo{
+    margin-left: 10px;
+}

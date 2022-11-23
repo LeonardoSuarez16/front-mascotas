@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
 import { BuscarMascotaComponent } from './mascota/buscar-mascota/buscar-mascota.component';
 import { CrearMascotaComponent } from './mascota/crear-mascota/crear-mascota.component';
 import { EditarMascotaComponent } from './mascota/editar-mascota/editar-mascota.component';
@@ -25,104 +26,129 @@ import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-us
 const routes: Routes = [
   {
     path: 'crear-usuario',
-    component:CrearUsuarioComponent
+    component: CrearUsuarioComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'editar-usuario/:id',
-    component:EditarUsuarioComponent
+    component: EditarUsuarioComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'buscar-usuario',
-    component:BuscarUsuarioComponent
+    component: BuscarUsuarioComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'eliminar-usuario/:id',
-    component:EliminarUsuarioComponent
+    component: EliminarUsuarioComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: "listar-mascotas",
-    component: BuscarMascotaComponent
+    component: BuscarMascotaComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: "listar-productos",
-    component: BuscarProductoComponent
+    component: BuscarProductoComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: "listar-usuario",
-    component: BuscarUsuarioComponent
+    component: BuscarUsuarioComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: "listar-plan",
-    component: BuscarPlanComponent
+    component: BuscarPlanComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: "listar-sucursal",
-    component: BuscarSucursalComponent
+    component: BuscarSucursalComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   
   {
     path: 'crear-mascota',
-    component:CrearMascotaComponent
+    component: CrearMascotaComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'editar-mascota/:id',
-    component:EditarMascotaComponent
+    component: EditarMascotaComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'buscar-mascota',
-    component:BuscarMascotaComponent
+    component: BuscarMascotaComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'eliminar-mascota/:id',
-    component:EliminarMascotaComponent
+    component: EliminarMascotaComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'crear-producto',
-    component:CrearProductoComponent
+    component: CrearProductoComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'editar-producto/:id',
-    component:EditarProductoComponent
+    component: EditarProductoComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'buscar-producto',
-    component:BuscarProductoComponent
+    component: BuscarProductoComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'eliminar-producto/:id',
-    component:EliminarProductoComponent
+    component: EliminarProductoComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'crear-plan',
-    component:CrearPlanComponent
+    component: CrearPlanComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'editar-plan/:id',
-    component:EditarPlanComponent
+    component: EditarPlanComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'buscar-plan',
-    component:BuscarPlanComponent
+    component: BuscarPlanComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'eliminar-plan/:id',
-    component:EliminarPlanComponent
+    component: EliminarPlanComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'crear-sucursal',
-    component:CrearSucursalComponent
+    component: CrearSucursalComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'editar-sucursal/:id',
-    component:EditarSucursalComponent
+    component: EditarSucursalComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'buscar-sucursal',
-    component:BuscarSucursalComponent
+    component: BuscarSucursalComponent,
+    canActivate:[ValidadorSesionGuard]
   },
   {
     path: 'eliminar-sucursal/:id',
-    component:EliminarSucursalComponent
+    component: EliminarSucursalComponent,
+    canActivate:[ValidadorSesionGuard]
   }
 
 
