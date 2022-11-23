@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Model } from 'mongoose';
+// import { Model } from 'mongoose';
 import { Observable } from 'rxjs';
 import { ModeloProductos } from '../modelos/producto.modelo';
 import { SeguridadService } from './seguridad.service';
